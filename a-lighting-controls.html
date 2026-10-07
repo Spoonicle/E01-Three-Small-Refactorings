@@ -24,20 +24,15 @@
       { name: "Teal", color: "#248a87" },
     ];
     let pIndex = 0;
-    let updates_enabled = true;
     const label = document.querySelector("#label");
     const swatch = document.querySelector("#swatch");
 
     function update() {
-      if (updates_enabled) {
         let item = pCollection[0];
         for (let i = 0; i < pCollection.length; i++) {
           if (i === pIndex ) item = pCollection[i];
-        }
         label.textContent = item.name;
         swatch.style.backgroundColor = item.color;
-      } else {
-        console.log("ignored update while updates are disabled");
       }
     }
 
